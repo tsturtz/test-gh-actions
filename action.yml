@@ -9,7 +9,7 @@ inputs:
   checkbox:
     description: "The name of the checkbox to verify"
     required: true
-    default: "integration test (mandatory)"
+    default: "some default checkbox label"
 
 runs:
   using: "composite"
