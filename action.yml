@@ -34,3 +34,4 @@ runs:
         else
           echo "Checkbox not found in pull request description"
           exit 1
+      shell: bash
