@@ -20,5 +20,5 @@ runs:
         CHECKBOX: ${{ inputs.checkbox }}
       run: |
         set -x
-        echo "this works?"
+        echo "$BODY" | tr '[:upper:]' '[:lower:]'
       shell: bash
