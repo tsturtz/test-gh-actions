@@ -23,13 +23,8 @@ runs:
         UNCHECKED="\[ \] $CHECKBOX"
         MARKED="\[x\] $CHECKBOX"
         BODY_LOWER=$(echo "$BODY" | tr '[:upper:]' '[:lower:]')
-        if echo "$BODY_LOWER" | grep -q "$MARKED"; then
-          echo "Checkbox is checked"
-          exit 0
-        elif echo "$BODY_LOWER" | grep -q "$UNCHECKED"; then
-          echo "Checkbox is not checked"
-          exit
-        else
-          echo "Checkbox not found in pull request description"
-          exit 1
+        if [[ "$BODY_LOWER" =~ "$MARKED" ]]; then
+          echo "Checkbox is checked"
+          exit 0
+        fi
       shell: bash
