@@ -18,17 +18,18 @@ runs:
       env:
         BODY: ${{ github.event.pull_request.body }}
         CHECKBOX: ${{ inputs.checkbox }}
+      shell: bash
       run: |
+        CHECKED="\[x\] $CHECKBOX"
         UNCHECKED="\[ \] $CHECKBOX"
-        MARKED="\[x\] $CHECKBOX"
-        BODY_LOWER=$(echo "$BODY" | tr '[:upper:]' '[:lower:]')
-        if echo "$BODY_LOWER" | grep -q "$MARKED"; then
+        echo "$CHECKED"
+        if echo "$BODY" | grep -q "$CHECKED"; then
           echo "Checkbox is checked"
           exit 0
-        elif echo "$BODY_LOWER" | grep -q "$UNCHECKED"; then
+        elif echo "$BODY" | grep -q "$UNCHECKED"; then
           echo "Checkbox is not checked"
           exit 1
         else
           echo "Checkbox not found in pull request description"
           exit 1
-      shell: bash
+        fi
