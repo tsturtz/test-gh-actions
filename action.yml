@@ -18,6 +18,7 @@ runs:
       env:
         BODY: ${{ github.event.pull_request.body }}
         CHECKBOX: ${{ inputs.checkbox }}
+      shell: bash
       run: |
         echo "$BODY"
         echo "$CHECKBOX"
