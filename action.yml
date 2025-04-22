@@ -11,11 +11,6 @@ inputs:
     required: true
     default: "integration test (mandatory)"
 
-# Here you must declare the name of the checkbox you want to verify
-# remember the name of your checkbox must be in lowercase
-env:
-  checkbox: "integration test (mandatory)"
-
 runs:
   using: "composite"
   steps:
