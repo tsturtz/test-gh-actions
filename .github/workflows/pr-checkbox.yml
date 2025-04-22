@@ -7,6 +7,7 @@ on:
 jobs:
   check_pull_request:
     name: Check PR for required checkbox
+    # TODO: update the runner
     # runs-on: linux
     # container:
     #   image: docker-hub.battle.net/wm/docker-base-ubuntu:22.04
@@ -18,6 +19,7 @@ jobs:
       - name: Check pull request description
         env:
           BODY: ${{ github.event.pull_request.body }}
+        # TODO: point to hosted action later
         uses: ./
         with:
-          checkbox: "Integration test (Mandatory)"
+          checkbox: "<--- THIS one is required!"

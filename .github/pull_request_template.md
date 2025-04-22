@@ -1,14 +1,13 @@
 ## Description
 
-(Add a few description here)
+bla bla bla
 
-## Type of change
+## Some other checkboxes
 
-- [ ] New feature
-- [ ] Bug fixing
-- [ ] Change configs
-- [ ] Update/add documentation
+- [ ] unit tests
+- [ ] code is 1337
+- [ ] no animals were harmed in the making of this PR
+- [ ] <--- THIS one is required!
+- [ ] some other random check
 
-# How has this been tested?
-
-- [ ] Integration test (Mandatory)
+### yadda yadda yadda
