@@ -22,6 +22,7 @@ runs:
       run: |
         CHECKED="\[x\] $CHECKBOX"
         UNCHECKED="\[ \] $CHECKBOX"
+        echo "$CHECKED"
         if echo "$BODY" | grep -q "$CHECKED"; then
           echo "Checkbox is checked"
           exit 0
