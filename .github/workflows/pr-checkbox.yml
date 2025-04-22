@@ -1,4 +1,4 @@
-name: Notify Slack on Release 📯
+name: Check PR for required checkbox
 
 on:
   release:
