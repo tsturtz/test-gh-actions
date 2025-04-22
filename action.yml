@@ -20,5 +20,10 @@ runs:
         CHECKBOX: ${{ inputs.checkbox }}
       run: |
         set -x
-        echo "$BODY" | tr '[:upper:]' '[:lower:]'
+        UNCHECKED="\[ \] $CHECKBOX"
+        MARKED="\[x\] $CHECKBOX"
+        BODY_LOWER=$(echo "$BODY" | tr '[:upper:]' '[:lower:]')
+        echo $UNCHECKED
+        echo $MARKED
+        echo $BODY
       shell: bash
