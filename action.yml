@@ -20,7 +20,6 @@ runs:
       run: |
         UNCHECKED="\[ \] ${{ inputs.checkbox }}"
         MARKED="\[x\] ${{ inputs.checkbox }}"
-        BODY_LOWER=$(echo "$BODY" | tr '[:upper:]' '[:lower:]')
         if echo "${BODY,,}" | grep -q "$MARKED"; then
           echo "Checkbox is checked"
           exit 0
