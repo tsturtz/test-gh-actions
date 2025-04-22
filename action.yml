@@ -23,9 +23,6 @@ runs:
         CHECKED="\[x\] $CHECKBOX"
         UNCHECKED="\[ \] $CHECKBOX"
         BODY_LOWER=$(echo "$BODY" | tr '[:upper:]' '[:lower:]')
-        if [[ "$BODY_LOWER" =~ "$CHECKED" ]]; then
-          echo "Checkbox is checked"
-          exit 0
         if [[ "$BODY_LOWER" =~ "$UNCHECKED" ]]; then
           echo "Checkbox is NOT checked"
           exit 1
