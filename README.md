@@ -1,5 +1,3 @@
 # test-gh-actions
 
-test
-
-- [ ] Integration test (Mandatory)
+testing an action to require a checkbox atm
