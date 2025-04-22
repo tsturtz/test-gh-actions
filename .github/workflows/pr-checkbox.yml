@@ -12,10 +12,9 @@ jobs:
     container:
       image: docker-hub.battle.net/wm/docker-base-ubuntu:22.04
       options: --user root
-    steps:    
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
       - name: Check pull request description
         env:
           BODY: ${{ github.event.pull_request.body }}
