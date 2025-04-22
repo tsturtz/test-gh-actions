@@ -19,14 +19,13 @@ runs:
         BODY: ${{ github.event.pull_request.body }}
         CHECKBOX: ${{ inputs.checkbox }}
       run: |
-          echo "$BODY"
-          echo "$CHECKBOX"
-          CHECK_STRING="- [x] Integration test (Mandatory)"
-          if echo "$BODY" | grep -q "$CHECK_STRING"; then
-            echo "Checkbox is checked"
-            exit 0
-          else
-            echo "Checkbox is not checked"
-            exit 1
-          fi
-      shell: bash
+        echo "$BODY"
+        echo "$CHECKBOX"
+        CHECK_STRING="- [x] Integration test (Mandatory)"
+        if echo "$BODY" | grep -q "$CHECK_STRING"; then
+          echo "Checkbox is checked"
+          exit 0
+        else
+          echo "Checkbox is not checked"
+          exit 1
+        fi
