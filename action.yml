@@ -18,14 +18,8 @@ runs:
       env:
         BODY: ${{ github.event.pull_request.body }}
         CHECKBOX: ${{ inputs.checkbox }}
-      run: |-
-          hexdump -C <<\EOF
-          ${{ github.event.pull_request.body }}
-          EOF
+      run: |
         CHECKED="\[x\] $CHECKBOX"
         UNCHECKED="\[ \] $CHECKBOX"
-        if [[ "$BODY" =~ "$CHECKED" ]]; then
-          echo "Checkbox is checked"
-          exit 0
-        fi
+        echo $BODY
       shell: bash
