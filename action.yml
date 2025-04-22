@@ -18,8 +18,8 @@ runs:
       env:
         BODY: ${{ github.event.pull_request.body }}
         CHECKBOX: ${{ inputs.checkbox }}
-      run: |
-        CHECKED="\[x\] $CHECKBOX"
-        UNCHECKED="\[ \] $CHECKBOX"
-        echo $BODY
+      run: |-
+        hexdump -C <<\EOF
+        ${{ github.event.pull_request.body }}
+        EOF
       shell: bash
