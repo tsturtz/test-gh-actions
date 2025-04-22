@@ -17,6 +17,7 @@ runs:
     - name: Check pull request description
       env:
         BODY: ${{ github.event.pull_request.body }}
+        CHECKBOX: ${{ inputs.checkbox }}
       run: |
         UNCHECKED="\[ \] $CHECKBOX"
         MARKED="\[x\] $CHECKBOX"
