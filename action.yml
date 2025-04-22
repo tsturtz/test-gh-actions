@@ -20,13 +20,15 @@ runs:
         CHECKBOX: ${{ inputs.checkbox }}
       shell: bash
       run: |
-        echo "$BODY"
-        echo "$CHECKBOX"
-        CHECK_STRING="- [x] Integration test (Mandatory)"
-        if echo "$BODY" | grep -q "$CHECK_STRING"; then
+        CHECKED="\[x\] $CHECKBOX"
+        UNCHECKED="\[ \] $CHECKBOX"
+        if echo "$BODY" | grep -q "$CHECKED"; then
           echo "Checkbox is checked"
           exit 0
-        else
+        elif echo "$BODY" | grep -q "$UNCHECKED"; then
           echo "Checkbox is not checked"
+          exit 1
+        else
+          echo "Checkbox not found in pull request description"
           exit 1
         fi
