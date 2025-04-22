@@ -19,3 +19,5 @@ jobs:
         env:
           BODY: ${{ github.event.pull_request.body }}
         uses: ./
+        with:
+          checkbox: "integration test (mandatory)"
