@@ -23,7 +23,7 @@ runs:
         UNCHECKED="\[ \] $CHECKBOX"
         MARKED="\[x\] $CHECKBOX"
         BODY_LOWER=$(echo "$BODY" | tr '[:upper:]' '[:lower:]')
-        echo $UNCHECKED
-        echo $MARKED
-        echo $BODY
+        if echo "$BODY_LOWER" | grep -q "$MARKED"; then
+          echo "Checkbox is checked"
+          exit 0
       shell: bash
