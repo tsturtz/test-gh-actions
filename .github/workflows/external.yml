@@ -1,0 +1,16 @@
+    name: My External Triggered Workflow
+
+    on:
+      repository_dispatch:
+        types: [my_custom_event] # Optional: define custom event types
+
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Check out repository
+            uses: actions/checkout@v4
+          - name: Process payload data
+            run: |
+              echo "Received event type: ${{ github.event.action }}"
+              echo "Client payload data: ${{ toJSON(github.event.client_payload) }}"
