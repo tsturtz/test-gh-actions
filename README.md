@@ -1,3 +1,3 @@
 # test-gh-actions
 
-testing an action to require a checkbox atm
+testing actions/workflows n stuff
