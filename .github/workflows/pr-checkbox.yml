@@ -7,11 +7,6 @@ on:
 jobs:
   check_pull_request:
     name: Check PR for required checkbox
-    # TODO: update the runner
-    # runs-on: linux
-    # container:
-    #   image: docker-hub.battle.net/wm/docker-base-ubuntu:22.04
-    #   options: --user root
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
